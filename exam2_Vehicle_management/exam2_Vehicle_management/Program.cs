@@ -25,7 +25,7 @@ namespace exam2_Vehicle_management
             for(int i = 1; i <= 183; i++)
             {
 
-                todaysale += prevdaysale + 2;
+                todaysale += prevdaysale + (i*2);
                 if (i >= 1 && i <= 31)
                 {
                     aprilSales += todaysale;
