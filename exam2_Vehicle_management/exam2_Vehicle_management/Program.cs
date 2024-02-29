@@ -22,29 +22,35 @@ namespace exam2_Vehicle_management
             int julysales = 0;
             int augsales = 0;
             int septsales = 0;
+            int day = 1;
             for(int i = 1; i <= 183; i++)
             {
-
-                todaysale += prevdaysale + (i*2);
-                if (i >= 1 && i <= 31)
+                
+                todaysale += prevdaysale + (day*2);
+                if (i >= 1 && i <= 30)
                 {
                     aprilSales += todaysale;
+                    day = 1;
                 }
-                else if(i > 31 && i <= 61)
+                else if(i > 30 && i <= 61)
                 {
                     maysales += todaysale;
+                    day = 1;
                 }
-                else if (i > 61 && i <= 92)
+                else if (i > 61 && i <= 91)
                 {
                     junesales += todaysale;
+                    day = 1;
                 }
-                else if (i > 92 && i <= 112)
+                else if (i > 91 && i <= 112)
                 {
                     julysales += todaysale;
+                    day = 1;
                 }
                 else if (i > 112 && i <= 143)
                 {
                     augsales += todaysale;
+                    day = 1;
                 }
                 else
                 {
@@ -63,6 +69,7 @@ namespace exam2_Vehicle_management
                 {
                     AugToSep15sales += todaysale;
                 }
+                day++;
             }
             Console.WriteLine($"April sales : {aprilSales}");
 
