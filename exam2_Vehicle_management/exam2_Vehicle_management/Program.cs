@@ -70,15 +70,18 @@ namespace exam2_Vehicle_management
                 {
                     septsales += todaysale;
                 }
-                if (i%5 == 0)
-                {
+                
+                
+                if(day%4 == 0 && day!= 0){
                     corporate_sales += todaysale;
                 }
                 else
                 {
                     retail_sales += todaysale;
                 }
+                
                 total_sales += todaysale;
+                
                 if (i >= 137 && i <= 167)
                 {
                     AugToSep15sales += todaysale;
