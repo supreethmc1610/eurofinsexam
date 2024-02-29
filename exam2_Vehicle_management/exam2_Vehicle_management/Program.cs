@@ -13,7 +13,7 @@ namespace exam2_Vehicle_management
             int total_sales = 0;
             int retail_sales = 0;
             int corporate_sales = 0;
-            int prevdaysale = 0;
+            int prevdaysale = 1;
             int todaysale = 0;
             int AugToSep15sales = 0;
             int aprilSales = 0;
@@ -22,35 +22,49 @@ namespace exam2_Vehicle_management
             int julysales = 0;
             int augsales = 0;
             int septsales = 0;
-            int day = 1;
+            int day = 0;
             for(int i = 1; i <= 183; i++)
             {
-                
-                todaysale += prevdaysale + (day*2);
+                todaysale = prevdaysale + (day*2);
                 if (i >= 1 && i <= 30)
                 {
                     aprilSales += todaysale;
-                    day = 1;
+                    if(i == 30){
+                        day = 0;
+                        prevdaysale = 1;
+                    }
                 }
                 else if(i > 30 && i <= 61)
                 {
                     maysales += todaysale;
-                    day = 1;
+                    if(i == 61){
+                    day = 0;
+                    prevdaysale = 1;
+                    }
                 }
                 else if (i > 61 && i <= 91)
                 {
                     junesales += todaysale;
-                    day = 1;
+                    if(i == 91){
+                    day = 0;
+                    prevdaysale = 1;
+                    }
                 }
                 else if (i > 91 && i <= 112)
                 {
                     julysales += todaysale;
-                    day = 1;
+                    if(i == 112){
+                    day = 0;
+                        prevdaysale = 1;
+                    }
                 }
                 else if (i > 112 && i <= 143)
                 {
                     augsales += todaysale;
-                    day = 1;
+                    if(i == 143){
+                    day = 0;
+                        prevdaysale = 1;
+                    }
                 }
                 else
                 {
@@ -70,6 +84,7 @@ namespace exam2_Vehicle_management
                     AugToSep15sales += todaysale;
                 }
                 day++;
+                prevdaysale = todaysale;
             }
             Console.WriteLine($"April sales : {aprilSales}");
 
